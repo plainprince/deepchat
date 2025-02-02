@@ -1,8 +1,9 @@
 {
-  "name": "deepchat",
-  "displayName": "deepchat",
+  "name": "deepchat-r1",
+  "displayName": "DeepChat-r1",
+  "publisher": "plainprince",
   "description": "Ollama vscode deepseek-r1 client",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -47,5 +48,9 @@
   "dependencies": {
     "ollama": "^0.5.12",
     "vsce": "^2.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plainprince/deepchat/"
   }
 }

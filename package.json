@@ -3,7 +3,7 @@
   "displayName": "DeepChat-r1",
   "publisher": "plainprince",
   "description": "Ollama vscode deepseek-r1 client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -16,19 +16,19 @@
     "commands": [
       {
         "command": "deepchat.openChat",
-        "title": "Deep Fucking Chat"
+        "title": "DeepChat: Open Chat"
       },
       {
         "command": "deepchat.set8b",
-        "title": "Set 8b"
+        "title": "DeepChat: Set 8b"
       },
       {
         "command": "deepchat.set32b",
-        "title": "Set 32b"
+        "title": "DeepChat: Set 32b"
       },
       {
         "command": "deepchat.set1.5b",
-        "title": "Set 1.5b"
+        "title": "DeepChat: Set 1.5b"
       }
     ]
   },

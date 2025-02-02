@@ -1,0 +1,51 @@
+{
+  "name": "deepchat",
+  "displayName": "deepchat",
+  "description": "Ollama vscode deepseek-r1 client",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "deepchat.openChat",
+        "title": "Deep Fucking Chat"
+      },
+      {
+        "command": "deepchat.set8b",
+        "title": "Set 8b"
+      },
+      {
+        "command": "deepchat.set32b",
+        "title": "Set 32b"
+      },
+      {
+        "command": "deepchat.set1.5b",
+        "title": "Set 1.5b"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0"
+  },
+  "dependencies": {
+    "ollama": "^0.5.12",
+    "vsce": "^2.15.0"
+  }
+}

@@ -12,7 +12,7 @@
 ![Screenshot showing the UI](./images/screenshot.png)
 
 ## Requirements installation
-### 1. Install ollama
+### Installing ollama
 1. Go to [the ollama download page](https://ollama.com/download) and download ollama for your system.
 2. Pull one of the three models using `ollama pull deepseek-r1:<1.5b|8b|32b>`
 Choose one of the following model sizes based on your system’s capabilities:
@@ -22,7 +22,7 @@ Choose one of the following model sizes based on your system’s capabilities:
 
 **Note**: The model download may take some time depending on your internet speed and the size of the model and can also take up some disk space.
 
-### 2. Install the extension
+### Installing the extension
 1. Press `Cmd + P` or `Ctrl + P` depending on your platform.
 2. Type in or paste in `ext install deepchat-r1` and press `Enter`. This will open the extension sidebar and you'll be able to just hit install.
 

@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 
 const { default: ollama } = require('ollama');
+// const { showCompletion, typeInCompletion, hideCompletion } = require('./completions.js');
 
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
@@ -301,6 +302,30 @@ window.addEventListener('message', event => {
         model.name = 'deepseek-r1:1.5b';
     })
 	context.subscriptions.push(disposable);
+/* 
+	vscode.workspace.onDidChangeTextDocument(async (event) => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor || editor.document !== event.document) return;
+
+		hideCompletion();
+
+        // Trigger completion when user types
+        if (event.contentChanges.length > 0) {
+            showCompletion(model.name);
+        }
+    });
+
+    disposable = vscode.commands.registerCommand('deepchat.triggerCompletion', () => {
+		hideCompletion();
+		showCompletion(model.name);
+	});
+	context.subscriptions.push(disposable);
+	
+	disposable = vscode.commands.registerCommand('deepchat.acceptCompletion', () => {
+		typeInCompletion();
+		hideCompletion();
+	});
+	context.subscriptions.push(disposable); */
 }
 
 // This method is called when your extension is deactivated

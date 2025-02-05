@@ -1,5 +1,5 @@
 # DeepChat
-**v 1.0.3**
+**v 1.0.4**
 
 **DeepChat** is a VS Code extension that integrates with the **Ollama API** and provides seamless AI-powered conversations using the **DeepSeek-R1** model. This extension is designed to help developers and users interact with AI directly within the VS Code environment with minimal setup.
 

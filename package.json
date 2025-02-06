@@ -4,7 +4,7 @@
   "publisher": "plainprince",
   "icon": "images/logo.png",
   "description": "Ollama vscode deepseek-r1 client",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -30,18 +30,9 @@
       {
         "command": "deepchat.set1.5b",
         "title": "DeepChat: Set 1.5b"
-      },
-      {
-        "command": "deepchat.triggerCompletion",
-        "title": "DeepChat: Trigger Completion"
       }
     ],
     "keybindings": [
-      {
-        "command": "deepchat.acceptCompletion",
-        "key": "tab",
-        "when": "editorTextFocus"
-      }
     ]
   },
   "scripts": {

@@ -13,6 +13,9 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
+	let chats = [];
+	let currentChatID = -1;
+	let currentChat = chats[currentChatID] || null;
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
@@ -24,6 +27,10 @@ function activate(context) {
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('deepchat.openChat', function () {
+		chats.push({name: 'New Chat', messages: []});
+		currentChatID = chats.length - 1;
+		currentChat = chats[currentChatID];
+
 		const panel = vscode.window.createWebviewPanel(
 			'deepchat',
 			'DeepChat',
@@ -75,72 +82,71 @@ function activate(context) {
 						width: 100%;
 						margin: 20px 0; /* Reset default margin */
 					}
+				
+					.chat-container {
+						position: fixed;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						display: flex;
+						align-items: center;
+						padding: 10px;
+						background: white;
+						border-top: 1px solid #ddd;
+						gap: 10px;
+						background-color: inherit;
+					}
 
-					
-.chat-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: white;
-    border-top: 1px solid #ddd;
-    gap: 10px;
-	background-color: inherit;
-}
+					#chat {
+						flex: 1;
+						max-height: 1.5rem;
+						padding: 10px;
+						border: 1px solid #ccc;
+						border-radius: 8px;
+						resize: none;
+						overflow-y: auto;
+						font-size: 16px;
+						max-width: 75%;
+					}
 
-#chat {
-    flex: 1;
-    max-height: 1.5rem;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    resize: none;
-    overflow-y: auto;
-    font-size: 16px;
-	max-width: 75%;
-}
+					#send {
+						background: #007aff;
+						color: white;
+						border: none;
+						padding: 10px 15px;
+						right: 0;
+						border-radius: 8px;
+						font-size: 18px;
+						cursor: pointer;
+						transition: background 0.2s ease-in-out;
+					}
 
-#send {
-    background: #007aff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-	right: 0;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-}
+					#send:hover {
+						background: #005ecb;
+					}
 
-#send:hover {
-    background: #005ecb;
-}
+					#send:active {
+						background: #004a9f;
+					}
 
-#send:active {
-    background: #004a9f;
-}
+					@media (max-width: 500px) {
+						.chat-container {
+							padding: 8px;
+						}
 
-@media (max-width: 500px) {
-    .chat-container {
-        padding: 8px;
-    }
+						#chat {
+							font-size: 14px;
+						}
 
-    #chat {
-        font-size: 14px;
-    }
+						#send {
+							font-size: 16px;
+							padding: 8px 12px;
+						}
+					}
 
-    #send {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
-}
-
-body {
-	margin-bottom: 2rem;
-}
+					body {
+						margin-bottom: 2rem;
+					}
 				</style>
 			</head>
 			<body>
